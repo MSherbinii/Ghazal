@@ -19,8 +19,8 @@ def copyFilesToLocal(srcPath, dstPath):
                     if len(files) > 0:
                         if not os.path.isdir(dstPath):
                             os.mkdir(dstPath)
-                            os.mkdir(metaPath, exist_ok=True)   # NOTE: this will raise TypeError at runtime
-                            os.mkdir(inputPath, exist_ok=True)  # NOTE: this will raise TypeError at runtime
+                            os.makedirs(metaPath, exist_ok=True)
+                            os.makedirs(inputPath, exist_ok=True)
                         for file in files:
                             if file.endswith(".log"):
                                 outDir = inputPath
